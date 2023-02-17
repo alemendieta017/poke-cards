@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './pokecard.css'
 
-function PokeCard(props) {
+function PokeCard({pokemon}) {
   const [imageUrl, setImageUrl] = useState(null)
   const [attack, setAttack] = useState(null)
   const [speed, setSpeed] = useState(null)
 
   useEffect(() => {
-    fetch(props.pokemon.url)
+    fetch(pokemon.url)
       .then((response) => response.json())
       .then((data) => {
         setImageUrl(data.sprites.other['official-artwork'].front_default)
@@ -21,13 +21,13 @@ function PokeCard(props) {
         setSpeed(speedStat[0].base_stat)
       })
       .catch((err) => console.log(err))
-  }, [])
+  }, [pokemon.url])
 
   return (
     <div className="card">
       <img src={imageUrl} alt="pokemon"></img>
       <div className="card-info">
-        <h2>{props.pokemon.name}</h2>
+        <h2>{pokemon.name}</h2>
         <p>Attack : {attack}</p>
         <p>Speed : {speed}</p>
       </div>
