@@ -1,27 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useContext } from 'react'
 import PokeCard from '../pokeCard/PokeCard'
-import data from './data'
+import PokeContext from '../../context/pokeContext'
 import './cards.css'
 
-export const Cards = () => {
-  const [pokemons, setPokemons] = useState([])
+export const Cards = (props) => {
+  const { pokemons, query } = useContext(PokeContext)
 
-  useEffect(() => {
-    fetch('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20%22')
-      .then((response) => response.json())
-      .then((data) => {
-        setPokemons(data.results)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-    setPokemons(data)
-  }, [])
   return (
     <div className="cards-container">
-      {pokemons.map((i, index) => {
-        return <PokeCard key={`${index}-${i.name}`} pokemon={i} />
-      })}
+      {pokemons
+        .filter((i) => i.name.toLowerCase().includes(query))
+        .map((i, index) => {
+          return <PokeCard key={`${index}-${i.name}`} pokemon={i} />
+        })}
     </div>
   )
 }
