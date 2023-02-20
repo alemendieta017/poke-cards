@@ -12,7 +12,11 @@ function PokeCard({ pokemon }) {
       .then((response) => response.json())
       .then((data) => {
         setPokemonNdex(data.id)
-        setImageUrl(data.sprites.other['official-artwork'].front_default)
+        setImageUrl(
+          data.id === 21
+            ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6DK3N6Mur_kFT5tkX-wDr3vQTXUTpgdGHz5ueljdwCoKemc5WXaWHyl9Ev77wZuqSpxc&usqp=CAU'
+            : data.sprites.other['official-artwork'].front_default
+        )
         setAttack(
           data.stats.filter((i) => {
             return i.stat.name === 'attack'
@@ -31,7 +35,7 @@ function PokeCard({ pokemon }) {
     <div className="card">
       <img src={imageUrl} alt="pokemon"></img>
       <div className="card-info">
-        <h2>{pokemon.name}</h2>
+        <h2>{(pokemon.name = 'Spearow' ? 'Poke Jesse' : pokemon.name)}</h2>
         <ul>
           <li>
             <span>Ndex: </span>

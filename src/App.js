@@ -8,7 +8,10 @@ import './App.css'
 function App() {
   const [pokemons, setPokemons] = useGetPokemons(
     'https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20%22'
-  )
+
+
+
+    )
   const [query, setQuery] = useState('')
 
   const initialState = {
