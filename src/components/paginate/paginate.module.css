@@ -1,0 +1,33 @@
+.paginate {
+  display: flex;
+  justify-content: center;
+}
+
+.paginate div {
+  user-select: none;
+  padding: 20px;
+  border-right: 1px solid lightgray;
+  cursor: pointer;
+}
+.paginate div:hover {
+  color: white;
+  background-color: gray;
+}
+
+.paginate div:last-child {
+  border: none;
+}
+
+.active-page {
+  background-color: lightgray;
+}
+
+@media screen and (max-width: 768px) {
+  .paginate {
+    width: 100vw;
+    overflow: hidden;
+  }
+  .paginate div {
+    padding: 10px;
+  }
+}

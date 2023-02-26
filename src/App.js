@@ -6,16 +6,14 @@ import useGetPokemons from './hooks/useGetPokemons'
 import './App.css'
 
 function App() {
-  const [pokemons, setPokemons] = useGetPokemons(
-    'https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20%22'
-
-
-
-    )
+  const { pokemons, setPokemons, pokemonsCount } = useGetPokemons(
+    'https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0'
+  )
   const [query, setQuery] = useState('')
 
   const initialState = {
     pokemons,
+    pokemonsCount,
     setPokemons,
     query,
     setQuery,
