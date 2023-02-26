@@ -1,8 +1,8 @@
 {
   "name": "poke-cards",
   "version": "0.1.0",
-  "private": false,
-  "homepage": "https://alemendieta017.github.io/poke-cards/",
+  "private": true,
+  "homepage": "https://alemendieta017.github.io/poke-cards",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
