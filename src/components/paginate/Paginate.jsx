@@ -2,11 +2,10 @@ import React, { useContext, useEffect, useState } from 'react'
 import PokeContext from '../../context/pokeContext'
 import styles from './paginate.module.css'
 
-const Paginate = () => {
+const Paginate = ({ current, setCurrent }) => {
   const itemsPerPage = 20
   const neighbors = 2
   const { pokemonsCount, setPokemons } = useContext(PokeContext)
-  const [current, setCurrent] = useState(1)
   const [list, setList] = useState([])
 
   const totalPages = Math.ceil(pokemonsCount / itemsPerPage)
