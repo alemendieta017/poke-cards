@@ -1,15 +1,13 @@
 {
   "files": {
     "main.css": "/poke-cards/static/css/main.360ca77e.css",
-    "main.js": "/poke-cards/static/js/main.221a7c64.js",
-    "static/js/787.3116f534.chunk.js": "/poke-cards/static/js/787.3116f534.chunk.js",
+    "main.js": "/poke-cards/static/js/main.93b75bbc.js",
     "index.html": "/poke-cards/index.html",
     "main.360ca77e.css.map": "/poke-cards/static/css/main.360ca77e.css.map",
-    "main.221a7c64.js.map": "/poke-cards/static/js/main.221a7c64.js.map",
-    "787.3116f534.chunk.js.map": "/poke-cards/static/js/787.3116f534.chunk.js.map"
+    "main.93b75bbc.js.map": "/poke-cards/static/js/main.93b75bbc.js.map"
   },
   "entrypoints": [
     "static/css/main.360ca77e.css",
-    "static/js/main.221a7c64.js"
+    "static/js/main.93b75bbc.js"
   ]
 }
